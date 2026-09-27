@@ -1,0 +1,5 @@
+// Comentario con simbolos ignorados: @ # $
+int x = 1; // comentario al final
+
+// Otra linea de comentario
+print(x);

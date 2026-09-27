@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta
+    http-equiv="Content-Security-Policy"
+    content="default-src 'self'; style-src 'self' 'unsafe-inline';"
+  >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>MiniLex - Analizador Léxico</title>
+
+  <link rel="stylesheet" href="./index.css">
+</head>
+
+<body>
+
+  <header class="topbar">
+    <div class="brand">
+      <div class="logo">M</div>
+
+      <div>
+        <h1>MiniLex</h1>
+        <span>Analizador Léxico con FLEX</span>
+      </div>
+    </div>
+
+    <div class="status">
+      <span class="status-dot"></span>
+      FLEX listo
+    </div>
+  </header>
+
+
+  <main class="workspace">
+
+    <!-- PANEL IZQUIERDO -->
+    <section class="panel editor-panel">
+
+      <div class="panel-header">
+        <div>
+          <span class="panel-label">CÓDIGO FUENTE</span>
+          <h2>Editor</h2>
+        </div>
+
+        <span class="filename">main.minilex</span>
+      </div>
+
+
+      <div class="editor-container">
+
+        <div class="line-numbers">
+          <span>1</span>
+          <span>2</span>
+          <span>3</span>
+          <span>4</span>
+          <span>5</span>
+          <span>6</span>
+          <span>7</span>
+          <span>8</span>
+          <span>9</span>
+          <span>10</span>
+        </div>
+
+        <textarea
+          id="codeEditor"
+          spellcheck="false"
+        >int edad = 20;
+float nota = 85.5;
+string nombre = "Erick";
+
+if (nota >= 70) {
+    print("Aprobado");
+}</textarea>
+
+      </div>
+
+
+      <div class="editor-footer">
+
+        <button class="btn btn-primary" id="analyzeBtn">
+          ▶ Analizar
+        </button>
+
+        <button class="btn" id="openBtn">
+          Abrir archivo
+        </button>
+
+        <button class="btn btn-danger" id="clearBtn">
+          Limpiar
+        </button>
+
+      </div>
+
+    </section>
+
+
+
+    <!-- PANEL DERECHO -->
+    <section class="panel results-panel">
+
+      <div class="panel-header">
+        <div>
+          <span class="panel-label">ANÁLISIS</span>
+          <h2>Resultados</h2>
+        </div>
+      </div>
+
+
+      <div class="stats">
+
+        <div class="stat-card">
+          <span class="stat-number" id="tokenCount">0</span>
+          <span class="stat-label">Tokens</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number success" id="errorCount">0</span>
+          <span class="stat-label">Errores</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-number" id="lineCount">0</span>
+          <span class="stat-label">Líneas</span>
+        </div>
+
+      </div>
+
+
+      <div class="table-container">
+
+        <table>
+
+          <thead>
+            <tr>
+              <th>Token</th>
+              <th>Lexema</th>
+              <th>Línea</th>
+            </tr>
+          </thead>
+
+          <tbody id="tokenTable">
+
+            <tr class="empty-row">
+              <td colspan="3">
+                Escribe código y presiona
+                <strong>Analizar</strong>
+              </td>
+            </tr>
+
+          </tbody>
+
+        </table>
+
+      </div>
+
+
+      <div class="console">
+
+        <div class="console-title">
+          SALIDA DEL ANALIZADOR
+        </div>
+
+        <div class="console-content" id="consoleOutput">
+          MiniLex listo para analizar código.
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <footer class="footer">
+
+    <span>
+      <span class="status-dot"></span>
+      Analizador preparado
+    </span>
+
+    <span>
+      MiniLex v1.0
+    </span>
+
+  </footer>
+<script src="./renderer.js"></script>
+</body>
+</html>

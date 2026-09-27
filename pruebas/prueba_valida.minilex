@@ -1,0 +1,9 @@
+int edad = 20;
+float nota = 85.5;
+string nombre = "Erick";
+bool activo = true;
+if (nota >= 70) {
+    print("Aprobado");
+} else {
+    return false;
+}
